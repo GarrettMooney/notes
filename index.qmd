@@ -1,5 +1,9 @@
 ---
-title: "Notes"
+title: "Garrett Mooney's Webpage"
 ---
 
-This is the home page.
+I'm a senior data professional. On this site you can learn all about my professional work.
+
+## Where to Go Next
+* Check out [About Me](about) to larn more about my career and expertise.
+* [My notes](notes) pages contain my personal notes about various technologies I work with.

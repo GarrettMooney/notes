@@ -1,5 +1,7 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site...
+I'm a senior data professional that favors simplicity over hype.
+
+I live in Pittsburgh with my partner and our cats. When I'm not working, I'm spending as much time outside in our backyard as I can.

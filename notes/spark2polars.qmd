@@ -1,4 +1,8 @@
-# Spark and Polars
+---
+title: "Spark and Polars"
+execute:
+  eval: false
+---
 
 > Spark to polars via arrow is memory  efficient.
 
@@ -23,4 +27,6 @@ def spark2polars(sdf: pyspark.sql.DataFrame):
 ![](/img/spark_polars.svg)
 
 
-__NB:__ Data must fit in memory.
+::: {.callout-important}
+Data must fit in memory.
+:::
