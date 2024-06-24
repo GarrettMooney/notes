@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>📚 Garrett’s Notes – Garrett's Webpage</title>
+<title>Colorblind-friendly Palette – Garrett’s Webpage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,68 +100,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="📚 Garrett’s Notes – Garrett’s Webpage">
+<meta name="twitter:title" content="Colorblind-friendly Palette – Garrett’s Webpage">
 <meta name="twitter:description" content="Garrett Mooney’s Webpage">
 <meta name="twitter:creator" content="@garrettrmooney">
 <meta name="twitter:site" content="@garrettrmooney">
@@ -157,7 +131,7 @@ window.Quarto = {
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../notes/index.html" aria-current="page"> 
+    <a class="nav-link" href="../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
 </ul>
@@ -179,7 +153,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📚 Garrett’s Notes</h1>
+<h1 class="title">Colorblind-friendly Palette</h1>
 </div>
 
 
@@ -196,70 +170,25 @@ window.Quarto = {
 </header>
 
 
-<p>This directory contains my notes. By design these are unpolished.</p>
+<blockquote class="blockquote">
+<p>Okabe &amp; Ito’s colorblind-friendly palette</p>
+</blockquote>
+<p>I first came across this palette via the <a href="https://github.com/clauswilke/colorblindr">colorblindr</a> package in R.</p>
+<p>The palette was originally developed by <a href="#'%20Two%20color%20palettes%20taken%20from%20the%20article%20%5B%22Color%20Universal%20Design%22%20by%20Okabe%20and%20Ito%5D(https://web.archive.org/web/20210108233739/http://jfly.iam.u-tokyo.ac.jp/color/).">Masataka Okabe and Kei Ito</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"honey"</span><span class="fu">:</span> <span class="st">"#e69f00"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"sky"</span><span class="fu">:</span> <span class="st">"#56b4e9"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"mint"</span><span class="fu">:</span> <span class="st">"#009e73"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"lemon"</span><span class="fu">:</span> <span class="st">"#f0e442"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"ocean"</span><span class="fu">:</span> <span class="st">"#0072b2"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"rust"</span><span class="fu">:</span> <span class="st">"#d55e00"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"rose"</span><span class="fu">:</span> <span class="st">"#cc79a7"</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"slate"</span><span class="fu">:</span> <span class="st">"#999999"</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Description
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1719214366164" data-listing-reading-time-sort="1" data-listing-word-count-sort="65" data-listing-title-sort="Colorblind-friendly Palette" data-listing-filename-sort="colorblind_pallette.qmd">
-<td>
-<a href="../notes/colorblind_pallette.html" class="title listing-title">Colorblind-friendly Palette</a>
-</td>
-<td>
-<span class="listing-description">Okabe &amp; Ito’s colorblind-friendly palette</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1719212356352" data-listing-reading-time-sort="1" data-listing-word-count-sort="44" data-listing-title-sort="Spark and Polars" data-listing-filename-sort="spark2polars.qmd">
-<td>
-<a href="../notes/spark2polars.html" class="title listing-title">Spark and Polars</a>
-</td>
-<td>
-<span class="listing-description">Spark to polars via arrow is memory efficient.</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1719214378772" data-listing-reading-time-sort="1" data-listing-word-count-sort="46" data-listing-title-sort="UV" data-listing-filename-sort="uv.qmd">
-<td>
-<a href="../notes/uv.html" class="title listing-title">UV</a>
-</td>
-<td>
-<span class="listing-description">Using uv to manage a virtual environment.</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1719214394780" data-listing-reading-time-sort="1" data-listing-word-count-sort="111" data-listing-title-sort="git worktree" data-listing-filename-sort="git_worktree.qmd">
-<td>
-<a href="../notes/git_worktree.html" class="title listing-title">git worktree</a>
-</td>
-<td>
-<span class="listing-description">Manage multiple branches in a single repository.</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1719206501770" data-listing-filename-sort="README.md">
-<td>
-<a href="../notes/README.md" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-description">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -707,7 +636,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/garrettmooney/notes/edit/main/notes/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/garrettmooney/notes/edit/main/notes/colorblind_pallette.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

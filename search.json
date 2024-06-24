@@ -7,9 +7,16 @@
     "text": "Spark to polars via arrow is memory efficient.\n\nFound this on stackoverflow.\nimport pyspark\nimport polars as pl\nimport pyarrow as pa\n\ndef spark2polars(sdf: pyspark.sql.DataFrame):\n    pdf = pl.from_arrow(pa.Table.from_batches(sdf._collect_as_arrow()))\n    return pdf\ntoPandas() serialization/copy looks like:\n\nspark2polars serialization/copy looks like:\n\n\n\n\n\n\n\nImportant\n\n\n\nData must fit in memory."
   },
   {
+    "objectID": "notes/colorblind_pallette.html",
+    "href": "notes/colorblind_pallette.html",
+    "title": "Colorblind-friendly Palette",
+    "section": "",
+    "text": "Okabe & Ito’s colorblind-friendly palette\n\nI first came across this palette via the colorblindr package in R.\nThe palette was originally developed by Masataka Okabe and Kei Ito.\n{\n  \"honey\": \"#e69f00\",\n  \"sky\": \"#56b4e9\",\n  \"mint\": \"#009e73\",\n  \"lemon\": \"#f0e442\",\n  \"ocean\": \"#0072b2\",\n  \"rust\": \"#d55e00\",\n  \"rose\": \"#cc79a7\",\n  \"slate\": \"#999999\",\n}"
+  },
+  {
     "objectID": "notes/uv.html",
     "href": "notes/uv.html",
-    "title": "uv",
+    "title": "UV",
     "section": "",
     "text": "Using uv to manage a virtual environment.\n\nInstall uv:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nCreate a virtual environment:\n#!/usr/bin/env bash\n\nset -e\n\necho \"==&gt; Creating venv\"\nuv venv .venv\n\necho \"==&gt; Activating venv\"\nsource .venv/bin/activate\n\necho \"==&gt; Installing packages\"\nuv pip install ipykernel jupyterlab\n\necho \"==&gt; Creating jupyter kernel\"\npython -m ipykernel install --user --name=.venv --display-name=\"Python 3.12 (.venv)\""
   },
@@ -33,5 +40,19 @@
     "title": "About Me",
     "section": "",
     "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
+  },
+  {
+    "objectID": "notes/git_worktree.html",
+    "href": "notes/git_worktree.html",
+    "title": "Git Worktree",
+    "section": "",
+    "text": "Manage multiple branches in a single repository.\ngit worktree comes built-in with git and allows you to have multiple branches checked out at the same time.\nI like it for when I need to work on a feature branch and a hotfix branch at the same time."
+  },
+  {
+    "objectID": "notes/git_worktree.html#usage",
+    "href": "notes/git_worktree.html#usage",
+    "title": "Git Worktree",
+    "section": "Usage",
+    "text": "Usage\nDo I already have any worktrees?\ngit worktree list\nCreate a new worktree for a branch\nPath for the worktree is .worktree/hotfix. Commit/branch to use in worktree is main.\n\n\n\n\n\n\nWarning\n\n\n\nYou can’t checkout another branch in your parent repository if you have a worktree for that branch.\n\n\ngit worktree add -b .worktree/hotfix main\nSwitch to the worktree:\ncd .worktree/hotfix\nDo some work in the worktree:\ngit add ...\ngit commit ...\ngit push ...\nRemove the worktree:\ncd ../..\ngit worktree remove .worktree/hotfix"
   }
 ]
