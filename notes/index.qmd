@@ -1,0 +1,16 @@
+---
+id: notes
+title: 📚 Garrett's Notes
+search: false
+sidebar_position: 1
+metadata-files: ["_listing_meta.yaml"]
+listing:
+  contents:
+    - "/*.qmd"
+    - "/*/index.qmd"
+    - "/*.md"
+    - "*/*.md"
+---
+
+This directory contains my notes. By design these are unpolished.
+
