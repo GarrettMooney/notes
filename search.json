@@ -7,11 +7,11 @@
     "text": "Spark to polars via arrow is memory efficient.\n\nFound this on stackoverflow.\nimport pyspark\nimport polars as pl\nimport pyarrow as pa\n\ndef spark2polars(sdf: pyspark.sql.DataFrame):\n    pdf = pl.from_arrow(pa.Table.from_batches(sdf._collect_as_arrow()))\n    return pdf\ntoPandas() serialization/copy looks like:\n\nspark2polars serialization/copy looks like:\n\n\n\n\n\n\n\nImportant\n\n\n\nData must fit in memory."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "notes/uv.html",
+    "href": "notes/uv.html",
+    "title": "uv",
     "section": "",
-    "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
+    "text": "Using uv to manage a virtual environment.\n\nInstall uv:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nCreate a virtual environment:\n#!/usr/bin/env bash\n\nset -e\n\necho \"==&gt; Creating venv\"\nuv venv .venv\n\necho \"==&gt; Activating venv\"\nsource .venv/bin/activate\n\necho \"==&gt; Installing packages\"\nuv pip install ipykernel jupyterlab\n\necho \"==&gt; Creating jupyter kernel\"\npython -m ipykernel install --user --name=.venv --display-name=\"Python 3.12 (.venv)\""
   },
   {
     "objectID": "index.html",
@@ -26,5 +26,12 @@
     "title": "Garrett Mooney’s Webpage",
     "section": "Where to Go Next",
     "text": "Where to Go Next\n\nCheck out About Me to larn more about my career and expertise.\nMy notes pages contain my personal notes about various technologies I work with."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
   }
 ]
