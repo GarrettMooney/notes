@@ -1,0 +1,26 @@
+# Spark and Polars
+
+> Spark to polars via arrow is memory  efficient.
+
+Found this on [stackoverflow](https://stackoverflow.com/a/73205690).
+
+```python
+import pyspark
+import polars as pl
+import pyarrow as pa
+
+def spark2polars(sdf: pyspark.sql.DataFrame):
+    pdf = pl.from_arrow(pa.Table.from_batches(sdf._collect_as_arrow()))
+    return pdf
+```
+
+`toPandas()` serialization/copy looks like:
+
+![](/img/spark_arrow_pandas.svg)
+
+`spark2polars` serialization/copy looks like:
+
+![](/img/spark_polars.svg)
+
+
+__NB:__ Data must fit in memory.
