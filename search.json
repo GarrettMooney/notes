@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "notes/spark2polars.html",
+    "href": "notes/spark2polars.html",
+    "title": "Spark and Polars",
+    "section": "",
+    "text": "Spark to polars via arrow is memory efficient.\n\nFound this on stackoverflow.\nimport pyspark\nimport polars as pl\nimport pyarrow as pa\n\ndef spark2polars(sdf: pyspark.sql.DataFrame):\n    pdf = pl.from_arrow(pa.Table.from_batches(sdf._collect_as_arrow()))\n    return pdf\ntoPandas() serialization/copy looks like:\n\nspark2polars serialization/copy looks like:\n\n\n\n\n\n\n\nImportant\n\n\n\nData must fit in memory."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Garrett Mooney’s Webpage",
+    "section": "",
+    "text": "I’m a senior data professional. On this site you can learn all about my professional work."
+  },
+  {
+    "objectID": "index.html#where-to-go-next",
+    "href": "index.html#where-to-go-next",
+    "title": "Garrett Mooney’s Webpage",
+    "section": "Where to Go Next",
+    "text": "Where to Go Next\n\nCheck out About Me to larn more about my career and expertise.\nMy notes pages contain my personal notes about various technologies I work with."
+  }
+]
