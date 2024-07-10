@@ -1,0 +1,24 @@
+---
+title: "Restore Glaciered S3 Data"
+execute:
+  eval: false
+---
+
+> Restore Glaciered S3 Data
+
+I can't tell you how many times I've had to restore data from improperly configured S3 buckets.
+
+This is a simple script that will restore all the data in a bucket that has been glaciered [within 3-5 hours](https://aws.amazon.com/s3/storage-classes/glacier/) using [rclone](https://github.com/rclone/rclone).
+
+```bash
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+BUCKET="s3://my-bucket"
+
+rclone backend restore \
+    -o priority=Standard \
+    -o lifetime=90 \
+    $BUCKET | 2>> error.log | tee -a run.log
+```
