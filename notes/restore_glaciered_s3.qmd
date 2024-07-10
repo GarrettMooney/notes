@@ -20,5 +20,5 @@ BUCKET="s3://my-bucket"
 rclone backend restore \
     -o priority=Standard \
     -o lifetime=90 \
-    $BUCKET | 2>> error.log | tee -a run.log
+    $BUCKET 2>> error.log | tee -a run.log
 ```
