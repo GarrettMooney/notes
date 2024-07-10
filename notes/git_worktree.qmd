@@ -1,0 +1,49 @@
+---
+title: "Git Worktree"
+execute:
+  eval: false
+---
+
+> Git worktree for quickly switching between branches
+
+Do i already have any worktrees?
+
+```bash
+git worktree list
+```
+
+Create new worktree where:
+
+* the path for the worktree is `.worktree/hotfix`
+* the commit/branch to use in worktree is `main`
+
+::: {.callout-warning}
+
+Now you can't checkout another branch in your parent repo until you remove this worktree
+
+:::
+
+```bash
+git worktree add .worktree/hotfix main
+```
+
+Enter worktree:
+
+```bash
+cd .worktree/hotfix
+```
+
+Make changes:
+
+```bash
+git add ...
+git commit ...
+git push ...
+```
+
+Remove worktree:
+
+```bash
+cd ../..
+git worktree remove hotfix
+```

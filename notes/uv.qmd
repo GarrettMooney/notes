@@ -1,0 +1,37 @@
+---
+title: "uv"
+execute:
+  eval: false
+---
+
+> Using the uv package manager
+
+[uv](https://github.com/astral-sh/uv) is the fastest, ergonomic package manager for Python that I use these days.
+It is written in rust (btw) and is a drop-in replacement for `pip` and `virtualenv` as of mid-2024,
+but I suspect that there are a lot of potential announcements around `uv` integrations happening shortly.
+
+Here is how I've been using it for experiments:
+
+```bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! command -v uv &> /dev/null; then
+    echo "===> Installing uv"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
+echo "===> Creating venv"
+uv venv .bayes
+
+echo "==> Activating venv"
+source .bayes/bin/activate
+
+echo "==> Installing packages"
+uv pip install ipykernel jupyterlab
+uv pip install -r requirements.txt
+
+echo "==> Creating jupyter kernel"
+python -m ipykernel install --user --name=.bayes --display-name="Python 3.12 (.bayes)"
+```
