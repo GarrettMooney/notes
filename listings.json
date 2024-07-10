@@ -2,10 +2,8 @@
   {
     "listing": "/notes/index.html",
     "items": [
-      "/notes/colorblind_pallette.html",
-      "/notes/spark2polars.html",
-      "/notes/uv.html",
-      "/notes/git_worktree.html"
+      "/notes/restore_glaciered_s3.html",
+      "/notes/spark2polars.html"
     ]
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Colorblind-friendly Palette – Garrett’s Webpage</title>
+<title>Restore Glaciered S3 Data – Garrett’s Webpage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="Colorblind-friendly Palette – Garrett’s Webpage">
+<meta name="twitter:title" content="Restore Glaciered S3 Data – Garrett’s Webpage">
 <meta name="twitter:description" content="Garrett Mooney’s Webpage">
 <meta name="twitter:creator" content="@garrettrmooney">
 <meta name="twitter:site" content="@garrettrmooney">
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Colorblind-friendly Palette</h1>
+<h1 class="title">Restore Glaciered S3 Data</h1>
 </div>
 
 
@@ -171,20 +171,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p>Okabe &amp; Ito’s colorblind-friendly palette</p>
+<p>Restore Glaciered S3 Data</p>
 </blockquote>
-<p>I first came across this palette via the <a href="https://github.com/clauswilke/colorblindr">colorblindr</a> package in R.</p>
-<p>The palette was originally developed by <a href="#'%20Two%20color%20palettes%20taken%20from%20the%20article%20%5B%22Color%20Universal%20Design%22%20by%20Okabe%20and%20Ito%5D(https://web.archive.org/web/20210108233739/http://jfly.iam.u-tokyo.ac.jp/color/).">Masataka Okabe and Kei Ito</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"honey"</span><span class="fu">:</span> <span class="st">"#e69f00"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"sky"</span><span class="fu">:</span> <span class="st">"#56b4e9"</span><span class="fu">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"mint"</span><span class="fu">:</span> <span class="st">"#009e73"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"lemon"</span><span class="fu">:</span> <span class="st">"#f0e442"</span><span class="fu">,</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"ocean"</span><span class="fu">:</span> <span class="st">"#0072b2"</span><span class="fu">,</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"rust"</span><span class="fu">:</span> <span class="st">"#d55e00"</span><span class="fu">,</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"rose"</span><span class="fu">:</span> <span class="st">"#cc79a7"</span><span class="fu">,</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"slate"</span><span class="fu">:</span> <span class="st">"#999999"</span><span class="fu">,</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I can’t tell you how many times I’ve had to restore data from improperly configured S3 buckets.</p>
+<p>This is a simple script that will restore all the data in a bucket that has been glaciered <a href="https://aws.amazon.com/s3/storage-classes/glacier/">within 3-5 hours</a> using <a href="https://github.com/rclone/rclone">rclone</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-eo</span> pipefail</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">BUCKET</span><span class="op">=</span><span class="st">"s3://my-bucket"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> backend restore <span class="dt">\</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">-o</span> priority=Standard <span class="dt">\</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">-o</span> lifetime=90 <span class="dt">\</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">$BUCKET</span> <span class="kw">|</span> <span class="dv">2</span><span class="op">&gt;&gt;</span> error.log <span class="kw">|</span> <span class="fu">tee</span> <span class="at">-a</span> run.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
@@ -636,7 +636,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/garrettmooney/notes/edit/main/notes/colorblind_pallette.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/garrettmooney/notes/edit/main/notes/restore_glaciered_s3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

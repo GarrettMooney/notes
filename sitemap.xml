@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://GarrettMooney.github.io/notes/notes/spark2polars.html</loc>
-    <lastmod>2024-06-24T06:59:16.352Z</lastmod>
-  </url>
-  <url>
-    <loc>https://GarrettMooney.github.io/notes/notes/colorblind_pallette.html</loc>
-    <lastmod>2024-06-24T07:32:46.164Z</lastmod>
-  </url>
-  <url>
-    <loc>https://GarrettMooney.github.io/notes/notes/uv.html</loc>
-    <lastmod>2024-06-24T07:32:58.772Z</lastmod>
-  </url>
-  <url>
-    <loc>https://GarrettMooney.github.io/notes/index.html</loc>
-    <lastmod>2024-06-24T06:59:16.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://GarrettMooney.github.io/notes/about.html</loc>
-    <lastmod>2024-06-24T06:59:16.349Z</lastmod>
+    <loc>https://GarrettMooney.github.io/notes/notes/restore_glaciered_s3.html</loc>
+    <lastmod>2024-07-10T01:37:20.402Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/index.html</loc>
-    <lastmod>2024-06-24T06:59:16.351Z</lastmod>
+    <lastmod>2024-06-24T07:39:30.968Z</lastmod>
   </url>
   <url>
-    <loc>https://GarrettMooney.github.io/notes/notes/git_worktree.html</loc>
-    <lastmod>2024-06-24T07:33:14.780Z</lastmod>
+    <loc>https://GarrettMooney.github.io/notes/index.html</loc>
+    <lastmod>2024-06-24T07:39:30.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://GarrettMooney.github.io/notes/about.html</loc>
+    <lastmod>2024-06-24T07:39:30.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://GarrettMooney.github.io/notes/notes/spark2polars.html</loc>
+    <lastmod>2024-06-24T07:39:30.968Z</lastmod>
   </url>
 </urlset>
