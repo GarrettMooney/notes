@@ -7,6 +7,20 @@
     "text": "Restore Glaciered S3 Data\n\nI can’t tell you how many times I’ve had to restore data from improperly configured S3 buckets.\nThis is a simple script that will restore all the data in a bucket that has been glaciered within 3-5 hours using rclone.\n#!/usr/bin/env bash\n\nset -eo pipefail\n\nBUCKET=\"s3://my-bucket\"\n\nrclone backend restore \\\n    -o priority=Standard \\\n    -o lifetime=90 \\\n    $BUCKET | 2&gt;&gt; error.log | tee -a run.log"
   },
   {
+    "objectID": "notes/git_worktree.html",
+    "href": "notes/git_worktree.html",
+    "title": "Git Worktree",
+    "section": "",
+    "text": "Git worktree for quickly switching between branches\n\nDo i already have any worktrees?\ngit worktree list\nCreate new worktree where:\n\nthe path for the worktree is .worktree/hotfix\nthe commit/branch to use in worktree is main\n\n\n\n\n\n\n\nWarning\n\n\n\nNow you can’t checkout another branch in your parent repo until you remove this worktree\n\n\ngit worktree add .worktree/hotfix main\nEnter worktree:\ncd .worktree/hotfix\nMake changes:\ngit add ...\ngit commit ...\ngit push ...\nRemove worktree:\ncd ../..\ngit worktree remove hotfix"
+  },
+  {
+    "objectID": "notes/uv.html",
+    "href": "notes/uv.html",
+    "title": "uv",
+    "section": "",
+    "text": "Using the uv package manager\n\nuv is the fastest, ergonomic package manager for Python that I use these days. It is written in rust (btw) and is a drop-in replacement for pip and virtualenv as of mid-2024, but I suspect that there are a lot of potential announcements around uv integrations happening shortly.\nHere is how I’ve been using it for experiments:\n#!/usr/bin/env bash\n\nset -euo pipefail\n\nif ! command -v uv &&gt; /dev/null; then\n    echo \"===&gt; Installing uv\"\n    curl -LsSf https://astral.sh/uv/install.sh | sh\nfi\n\necho \"===&gt; Creating venv\"\nuv venv .bayes\n\necho \"==&gt; Activating venv\"\nsource .bayes/bin/activate\n\necho \"==&gt; Installing packages\"\nuv pip install ipykernel jupyterlab\nuv pip install -r requirements.txt\n\necho \"==&gt; Creating jupyter kernel\"\npython -m ipykernel install --user --name=.bayes --display-name=\"Python 3.12 (.bayes)\""
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Garrett Mooney’s Webpage",
