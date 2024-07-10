@@ -4,7 +4,7 @@
     "href": "notes/restore_glaciered_s3.html",
     "title": "Restore Glaciered S3 Data",
     "section": "",
-    "text": "Restore Glaciered S3 Data\n\nI can’t tell you how many times I’ve had to restore data from improperly configured S3 buckets.\nThis is a simple script that will restore all the data in a bucket that has been glaciered within 3-5 hours using rclone.\n#!/usr/bin/env bash\n\nset -eo pipefail\n\nBUCKET=\"s3://my-bucket\"\n\nrclone backend restore \\\n    -o priority=Standard \\\n    -o lifetime=90 \\\n    $BUCKET | 2&gt;&gt; error.log | tee -a run.log"
+    "text": "Restore Glaciered S3 Data\n\nI can’t tell you how many times I’ve had to restore data from improperly configured S3 buckets.\nThis is a simple script that will restore all the data in a bucket that has been glaciered within 3-5 hours using rclone.\n#!/usr/bin/env bash\n\nset -eo pipefail\n\nBUCKET=\"s3://my-bucket\"\n\nrclone backend restore \\\n    -o priority=Standard \\\n    -o lifetime=90 \\\n    $BUCKET 2&gt;&gt; error.log | tee -a run.log"
   },
   {
     "objectID": "notes/git_worktree.html",
