@@ -21,6 +21,13 @@
     "text": "Using the uv package manager\n\nuv is the fastest, ergonomic package manager for Python that I use these days. It is written in rust (btw) and is a drop-in replacement for pip and virtualenv as of mid-2024, but I suspect that there are a lot of potential announcements around uv integrations happening shortly.\nHere is how I’ve been using it for experiments:\n#!/usr/bin/env bash\n\nset -euo pipefail\n\nif ! command -v uv &&gt; /dev/null; then\n    echo \"===&gt; Installing uv\"\n    curl -LsSf https://astral.sh/uv/install.sh | sh\nfi\n\necho \"===&gt; Creating venv\"\nuv venv .bayes\n\necho \"==&gt; Activating venv\"\nsource .bayes/bin/activate\n\necho \"==&gt; Installing packages\"\nuv pip install ipykernel jupyterlab\nuv pip install -r requirements.txt\n\necho \"==&gt; Creating jupyter kernel\"\npython -m ipykernel install --user --name=.bayes --display-name=\"Python 3.12 (.bayes)\""
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Garrett Mooney’s Webpage",
@@ -35,11 +42,18 @@
     "text": "Where to Go Next\n\nCheck out About Me to larn more about my career and expertise.\nMy notes pages contain my personal notes about various technologies I work with."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "notes/llm/llm_course.html",
+    "href": "notes/llm/llm_course.html",
+    "title": "LLM Course",
     "section": "",
-    "text": "I’m a senior data professional that favors simplicity over hype.\nI live in Pittsburgh with my partner and our cats. When I’m not working, I’m spending as much time outside in our backyard as I can."
+    "text": "Notes from Hamel’s LLM Course"
+  },
+  {
+    "objectID": "notes/llm/llm_course.html#back-to-basics-for-rag",
+    "href": "notes/llm/llm_course.html#back-to-basics-for-rag",
+    "title": "LLM Course",
+    "section": "Back to Basics for RAG",
+    "text": "Back to Basics for RAG\nSome interesting ideas from the session:\n\nUse classic IR metrics for evaluation\n\nRecall@k: all the relevant\nPrecision@k: nothing but relevant\nnDCG@k: graded, rank-aware\nReciprocal Rank: “where is the first relevant?”\nLGTM@10: “vibe checks”\n\nIn industry, we care about:\n\nEngagement: clicks, dwell time, add-to-cart, etc.\nRevenue\nMulti-objective ranking (not just relevance)\nQuery distribution\n\nHead queries vs tail queries\n\n\nThe ir-measures Python package is a good starting point\nBuild a golden relevance dataset\n\nGot traffic? Sample those queries\nNo traffic? Use LLM to generate queries for your content\n\n\n\n\n\nqid\ndocid\nrelevance label\ncomment\n\n\n\n\n3 (how to ..)\n4\n1\n\n\n\n3 (where ..)\n2\n1\n\n\n\n\nwhere 0 is irrelevant, 1 is somewhat relevant, 2 is highly relevant\n(this is all i’ve gotten to so far…)"
   },
   {
     "objectID": "notes/spark2polars.html",

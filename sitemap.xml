@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/restore_glaciered_s3.html</loc>
-    <lastmod>2024-07-10T02:06:07.037Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.339Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/git_worktree.html</loc>
-    <lastmod>2024-07-10T02:02:05.071Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.339Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/uv.html</loc>
-    <lastmod>2024-07-10T02:03:26.216Z</lastmod>
-  </url>
-  <url>
-    <loc>https://GarrettMooney.github.io/notes/index.html</loc>
-    <lastmod>2024-06-24T07:39:30.967Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.340Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/about.html</loc>
-    <lastmod>2024-06-24T07:39:30.966Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.338Z</lastmod>
+  </url>
+  <url>
+    <loc>https://GarrettMooney.github.io/notes/index.html</loc>
+    <lastmod>2024-07-16T14:00:09.338Z</lastmod>
+  </url>
+  <url>
+    <loc>https://GarrettMooney.github.io/notes/notes/llm/llm_course.html</loc>
+    <lastmod>2024-07-17T04:49:13.804Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/index.html</loc>
-    <lastmod>2024-06-24T07:39:30.968Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.339Z</lastmod>
   </url>
   <url>
     <loc>https://GarrettMooney.github.io/notes/notes/spark2polars.html</loc>
-    <lastmod>2024-06-24T07:39:30.968Z</lastmod>
+    <lastmod>2024-07-16T14:00:09.339Z</lastmod>
   </url>
 </urlset>
