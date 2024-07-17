@@ -1,0 +1,37 @@
+---
+title: "LLM Course"
+execute:
+  eval: false
+---
+
+> Notes from Hamel's LLM Course
+
+## [Back to Basics for RAG](https://www.youtube.com/watch?v=nc0BupOkrhI)
+
+Some interesting ideas from the session:
+
+- Use classic IR metrics for evaluation
+    - `Recall@k`: all the relevant
+    - `Precision@k`: nothing but relevant
+    - `nDCG@k`: graded, rank-aware
+    - `Reciprocal Rank`: "where is the first relevant?"
+    - `LGTM@10`: "vibe checks"
+- In industry, we care about:
+  - Engagement: clicks, dwell time, add-to-cart, etc.
+  - Revenue
+  - Multi-objective ranking (not just relevance)
+  - Query distribution
+      - Head queries vs tail queries
+- The [ir-measures](https://ir-measur.es/en/latest/) Python package is a good starting point
+- Build a golden relevance dataset
+    - Got traffic? Sample those queries
+    - No traffic? Use LLM to generate queries for your content
+
+| qid | docid | relevance label | comment |
+| --- | ----- | --------------- | ------- |
+| 3 (how to ..)   |  4   | 1               | |
+| 3 (where ..)   | 2     | 1               | |
+
+where 0 is irrelevant, 1 is somewhat relevant, 2 is highly relevant
+
+(this is all i've gotten to so far...)

@@ -10,6 +10,8 @@ listing:
     - "/*/index.qmd"
     - "/*.md"
     - "*/*.md"
+    - "/*.qmd"
+    - "*/*.qmd"
 ---
 
 This directory contains my notes. By design these are unpolished.
