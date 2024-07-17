@@ -3,6 +3,7 @@
     "listing": "/notes/index.html",
     "items": [
       "/notes/git_worktree.html",
+      "/notes/llm/llm_course.html",
       "/notes/restore_glaciered_s3.html",
       "/notes/spark2polars.html",
       "/notes/uv.html"
